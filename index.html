@@ -33,62 +33,72 @@
     </style>
   </head>
   <body>
+    <div class="mobile_menu_hide">
+      <img class = "closeButtonMobile" src="images/icon-close.svg" alt="close">
+      <a id ="collection" href="#">Collections</a>
+      <a href="#">Men</a>
+      <a href="#">Women</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
     <section class="container">
-      
-        <div class="navbar">
-          <img class="burger" src="images/icon-menu.svg" alt="burger" />
-          <img class="logo" src="images/logo.svg" alt="logo" />
-          <div class="deckstop_options">
-            <span>Collections</span>
-            <span>Men</span>
-            <span>Women</span>
-            <span>About</span>
-            <span>Contact</span>
-          </div>
-          <img src="images/icon-cart.svg" alt="cart" class="cart" />
-          <img src="images/image-avatar.png" alt="avatar" class="avatar" />
+      <div class="navbar">
+        <img class="burgerMenu" src="images/icon-menu.svg" alt="burger" />
+        <img class="logo" src="images/logo.svg" alt="logo" />
+        <div class="deckstop_options">
+          <span>Collections</span>
+          <span>Men</span>
+          <span>Women</span>
+          <span>About</span>
+          <span>Contact</span>
         </div>
-      
-      
-        <div class="product_preview">
-          <img
-            class="product_image"
-            src="images/image-product-1.jpg"
-            alt="product1"
-          />
-          <div class = "little_images">
-            <span><img class ="image_one" src="images/image-product-2-thumbnail.jpg" alt=""></span>
-            <span><img src="images/image-product-3-thumbnail.jpg" alt=""></span>
-            <span><img src="images/image-product-4-thumbnail.jpg" alt=""></span>
-            <span><img src="images/image-product-1-thumbnail.jpg" alt=""></span>
+        <img src="images/icon-cart.svg" alt="cart" class="cart" />
+        <img src="images/image-avatar.png" alt="avatar" class="avatar" />
+      </div>
+
+      <div class="product_preview">
+        <img
+          class="product_image"
+          src="images/image-product-1.jpg"
+          alt="product1"
+        />
+        <div class="little_images">
+          <span
+            ><img
+              class="image_one"
+              src="images/image-product-2-thumbnail.jpg"
+              alt=""
+          /></span>
+          <span><img src="images/image-product-3-thumbnail.jpg" alt="" /></span>
+          <span><img src="images/image-product-4-thumbnail.jpg" alt="" /></span>
+          <span><img src="images/image-product-1-thumbnail.jpg" alt="" /></span>
+        </div>
+      </div>
+      <div class="pricing_pannel">
+        <h3 class="sneaker_company">sneaker Company</h3>
+        <h1 class="product_title">Fall Limited Edition Sneakers</h1>
+        <p class="Product_description">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="pricing">
+          <span class="price">$125.00</span><span class="discount">50%</span>
+          <p class="original_price">250$</p>
+        </div>
+        <div class="adding_product">
+          <div class="plus_minus">
+            <img class="plus" src="images/icon-plus.svg" alt="plus" />
+            <p class="result">0</p>
+            <img src="images/icon-minus.svg" alt="minus" />
+          </div>
+          <div class="add_toCart">
+            <span>Add to cart</span>
           </div>
         </div>
-        <div class="pricing_pannel">
-          <h3 class="sneaker_company">sneaker Company</h3>
-          <h1 class="product_title">Fall Limited Edition Sneakers</h1>
-          <p class="Product_description">
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
-            the weather can offer.
-          </p>
-          <div class="pricing">
-            <span class="price">$125.00</span><span class="discount">50%</span>
-            <p class="original_price">250$</p>
-          </div>
-          <div class="adding_product">
-            <div class="plus_minus">
-              <img class="plus" src="images/icon-plus.svg" alt="plus" />
-              <p class="result">0</p>
-              <img src="images/icon-minus.svg" alt="minus" />
-            </div>
-            <div class="add_toCart">
-              <span>Add to cart</span>
-            </div>
-          </div>
-        </div>
-      
+      </div>
     </section>
 
-    
+    <script src="app.js"></script>
   </body>
 </html>

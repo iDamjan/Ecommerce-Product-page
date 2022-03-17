@@ -35,7 +35,7 @@ body {
 .avatar {
   margin-left: 1.5rem;
 }
-.burger {
+.burgerMenu {
   transform: translateY(3px);
 }
 
@@ -124,6 +124,38 @@ p {
 .little_images{
   display: none;
 }
+.mobile_menu_hide{
+  display: none;
+  
+}
+.mobile_menu{
+
+  display: block;
+  height: 100%;
+  position: absolute;
+  width: 60%;
+  background-color:white;
+  z-index: 1;
+  padding: 24px 24px;
+  
+}
+.mobile_menu >* {
+  text-decoration: none;
+  display: block;
+  color: black;
+  font-weight: 800;
+  padding-bottom: 30px;
+
+
+}
+.burgerMenu:hover{
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+  padding-bottom: 3px;
+}
+
+#collection{
+  margin-top: 20px;
+}
 
 @media (min-width: 60em) {
   body {
@@ -131,6 +163,9 @@ p {
     justify-content: center;
     align-items: center;
    
+  }
+  .mobile_menu{
+    display: none;
   }
   .container {
     max-width: 70rem;
@@ -169,16 +204,41 @@ p {
   .deckstop_options > * { 
     margin-left: 2.1rem;
     color: hsl(219, 9%, 45%);
+    position: relative;
+    transition: ease-in-out 0.3s;
   
   }
-  .deckstop_options > *:hover{
-    border-bottom: 5px solid hsl(26, 100%, 55%);
+  .deckstop_options > *:hover{ 
+    
+    
+    color: hsl(218, 7%, 22%);
+    
+  }
+
+  .deckstop_options > *::after{
+    content: "";
+    position: absolute;
+    height: 5px;
+    background-color: hsl(26, 100%, 55%);
+    width: 0;
+    left: 0;
+    bottom: -48.5px;
+    
+    transition: ease-in 0.1s;
+
+   
+    
+  }
+  .deckstop_options > *:hover::after{
+    width: 100%;
+    
+
   }
   .avatar{
     width: 3rem;
     height: 3rem;
   }
-  .burger{
+  .burgerMenu{
     display: none;
   }
   .little_images{
@@ -204,6 +264,7 @@ p {
   }
   .adding_product >*{
     width: 100%;
+    max-height: 52px;
   }
   .plus_minus{
     max-width: 154px;
