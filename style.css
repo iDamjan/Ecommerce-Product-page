@@ -9,19 +9,20 @@ body {
   margin: 0;
 }
 
-.product_image1 {
+.product_image_default {
   max-width: 100%;
   position: relative;
-  
+  transition: 100ms ease-in;
 }
-.product_image2 {
+.product_image {
   position: absolute;
-  width: 100%;
+  width: 0%;
   height: 100%;
   left: 0%;
   opacity: 0;
-  
-
+}
+.product_image_desktop {
+  display: none;
 }
 .carosel {
   position: relative;
@@ -101,17 +102,17 @@ p {
   margin-left: auto;
   text-decoration: line-through;
 }
-.add_toCart:hover { 
-background-color:hsl(26, 92%, 43%); ;
+.add_toCart:hover {
+  background-color: hsl(26, 92%, 43%);
 }
 /* plus minus */
 
-.plus:hover{
+.plus:hover {
   background-color: hsl(25, 84%, 80%);
   padding: 0.3rem;
   border-radius: 1rem;
 }
-.minus:hover{
+.minus:hover {
   background-color: hsl(25, 84%, 80%);
   padding: 0.3rem;
   border-radius: 1rem;
@@ -197,7 +198,6 @@ background-color:hsl(26, 92%, 43%); ;
   background-color: white;
   z-index: 3;
   padding: 24px 24px;
-
 }
 .mobile_menu > * {
   text-decoration: none;
@@ -215,7 +215,6 @@ background-color:hsl(26, 92%, 43%); ;
   border-bottom: 3px solid hsl(26, 100%, 55%);
   padding-bottom: 3px;
 }
-
 
 .closeButtonMobile {
   transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.4s;
@@ -254,13 +253,10 @@ background-color:hsl(26, 92%, 43%); ;
     margin-top: 150px;
     margin-right: 50px;
   }
-  .product_image1 {
-    max-width: 25rem;
-    width: 100%;
-
-    border-radius: 1.25rem;
+  .product_image_default {
+    display: none;
   }
-  .product_image2 {
+  .product_image {
     max-width: 25rem;
     width: 100%;
 
@@ -348,5 +344,19 @@ background-color:hsl(26, 92%, 43%); ;
   }
   .product_preview {
     display: block;
+  }
+
+  .image_default {
+    border: 3px solid hsl(26, 100%, 55%);
+    box-sizing: border-box;
+    background-color: rgba(36, 36, 36, 0.425);
+    opacity: 50%;
+  }
+  .product_image_desktop {
+    display: block;
+    max-width: 25rem;
+    width: 100%;
+
+    border-radius: 1.25rem;
   }
 }
