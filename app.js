@@ -54,9 +54,14 @@ buttonPrevious.addEventListener("click", () => {
     carosel[0].classList.add("product_image");
   }
 });
+//Mobile product container 
+const avatar = document.querySelector('.avatar'); 
+const cartContainer = document.querySelector('.mobile_cart_container_hide');
 
-//Desktop image selection 
-
+avatar.addEventListener('click', ()=> { 
+  cartContainer.classList.toggle('mobile_cart_container')
+})
+//Desktop image selection
 
 //Openning and closing the mobile menu
 burgerMenu.addEventListener("click", () => {
