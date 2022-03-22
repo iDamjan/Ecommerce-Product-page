@@ -10,6 +10,14 @@ const result = document.querySelector(".result");
 const priceShoes = document.querySelector(".price");
 const carosel = document.querySelectorAll(".carosel img");
 
+const addToCartButton = document.querySelector('.add_toCart');
+const productInBasket = document.querySelector('.product_added_hide');
+const emptyBasketText = document.querySelector('.cart_empty_text');
+
+const totalPriceBasket = document.querySelector('.total_price');
+const quantity = document.querySelector('.quantity');
+const iconDelete = document.querySelector('.icon_delete');
+
 const imagesCount = carosel.length;
 console.log(imagesCount);
 console.log(carosel[imagesCount - 1]);
@@ -61,6 +69,18 @@ const cartContainer = document.querySelector('.mobile_cart_container_hide');
 avatar.addEventListener('click', ()=> { 
   cartContainer.classList.toggle('mobile_cart_container')
 })
+
+//Adding products in the basket
+addToCartButton.addEventListener('click',() => { 
+  productInBasket.classList.add('product_added');
+  emptyBasketText.style.display = 'none';
+})
+
+//Delete the product from the basket
+iconDelete.addEventListener('click', () =>{
+  productInBasket.classList.remove('product_added');
+  emptyBasketText.style.display = 'flex';
+})
 //Desktop image selection
 
 //Openning and closing the mobile menu
@@ -77,10 +97,12 @@ closeButtonMobile.addEventListener("click", () => {
 plusProduct.addEventListener("click", () => {
   count += 1;
   result.innerHTML = count;
-
+  quantity.innerHTML = count;
   if (result.innerHTML > 1) {
     let newPrice = (price += 125);
     priceShoes.innerHTML = `$${newPrice}.00`;
+    totalPriceBasket.innerHTML =` $${newPrice}.00`;
+    
   }
 });
 
@@ -88,8 +110,10 @@ minusProduct.addEventListener("click", () => {
   if (result.innerHTML > 1) {
     count -= 1;
     result.innerHTML = count;
+    quantity.innerHTML = count;
     let priceDecrease = (price -= 125);
     priceShoes.innerHTML = `$${priceDecrease}.00`;
+    totalPriceBasket.innerHTML =` $${priceDecrease}.00`;
   }
 });
 //Counting of the product
