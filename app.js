@@ -21,10 +21,12 @@ const iconDelete = document.querySelector(".icon_delete");
 
 const imagesCount = carosel.length;
 
-const desktopImagesThumbnail = document.querySelectorAll(".little_images > span");
+const desktopImagesThumbnail = document.querySelectorAll(".little_images img");
 const desktopCarousel = document.querySelector(".desktopCarousel");
+const desktopDefaultProductImage = document.querySelector(
+  ".product_image_default_desktop"
+);
 
-console.log(desktopImagesThumbnail);
 let count = 1;
 let price = 125;
 
@@ -116,7 +118,16 @@ minusProduct.addEventListener("click", () => {
 //Counting of the product
 
 //desktop carousel
-for(var i = 0; i < desktopImagesThumbnail.length; i++) {
-  desktopImagesThumbnail[i].addEventListener("click", () => console.log('test'));
-}
 
+desktopImagesThumbnail.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    const clickedImg = e.target;
+
+    desktopImagesThumbnail.forEach((images) => {
+      images.classList.remove("image_default");
+    });
+    clickedImg.classList.add("image_default");
+
+    desktopDefaultProductImage.src = clickedImg.src;
+  });
+});

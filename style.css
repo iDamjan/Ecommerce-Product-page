@@ -312,6 +312,9 @@ p {
   padding-bottom: 30px;
   transition: ease-in-out 0.3s;
 }
+.product_image_default_desktop{
+  display: none;
+}
 
 .mobile_menu > *:hover {
   color: hsl(26, 100%, 55%);
@@ -344,6 +347,9 @@ p {
   .mobile_cart_container {
     display: none;
   }
+  .carosel{
+    display: none;
+  }
   .container {
     max-width: 70rem;
     display: grid;
@@ -361,7 +367,7 @@ p {
     margin-top: 150px;
     margin-right: 50px;
   }
-  .product_image_default {
+  .product_image_default_desktop {
     display: block;
     max-width: 25rem;
     width: 100%;
@@ -431,7 +437,9 @@ p {
     max-width: 5.5rem;
     width: 100%;
     border-radius: 10px;
+    z-index: 3;
   }
+  
   .adding_product {
     display: flex;
     justify-content: space-evenly;
