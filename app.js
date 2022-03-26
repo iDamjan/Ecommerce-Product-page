@@ -26,9 +26,25 @@ const desktopCarousel = document.querySelector(".desktopCarousel");
 const desktopDefaultProductImage = document.querySelector(
   ".product_image_default_desktop"
 );
+const cartImage = document.querySelector('.cart');
+const cartCounter = document.querySelector('.itemsCountOnCart_hide');
+const cartCounterValue = document.querySelector('.cart_counter');
 
 let count = 1;
 let price = 125;
+const localStorageCount = localStorage.getItem('itemsInCart');
+console.log(localStorageCount)
+
+if (localStorageCount) { 
+productInBasket.classList.add("product_added");
+emptyBasketText.style.display = "none";
+cartCounter.classList.add('itemsCountOnCart')
+
+result.innerHTML = localStorageCount;
+quantity.innerHTML = localStorageCount;
+cartCounterValue.innerHTML = localStorageCount; 
+
+}
 
 //Mobile Carousel
 const changeMainImage = (currentImgId, currentImg) => {
@@ -67,17 +83,29 @@ const cartContainer = document.querySelector(".mobile_cart_container_hide");
 avatar.addEventListener("click", () => {
   cartContainer.classList.toggle("mobile_cart_container");
 });
+cartImage.addEventListener("click", () => {
+  cartContainer.classList.toggle("mobile_cart_container");
+});
+//Mobile product container
+
+//Desktop product container
+
 
 //Adding products in the basket
 addToCartButton.addEventListener("click", () => {
   productInBasket.classList.add("product_added");
   emptyBasketText.style.display = "none";
+  cartCounter.classList.add('itemsCountOnCart')
+  localStorage.setItem("itemsInCart", count);
 });
+
 
 //Delete the product from the basket
 iconDelete.addEventListener("click", () => {
   productInBasket.classList.remove("product_added");
   emptyBasketText.style.display = "flex";
+  cartCounter.classList.remove('itemsCountOnCart');
+  localStorage.clear();
 });
 //Desktop image selection
 
@@ -98,6 +126,7 @@ plusProduct.addEventListener("click", () => {
   count += 1;
   result.innerHTML = count;
   quantity.innerHTML = count;
+  cartCounterValue.innerHTML = count; 
   if (result.innerHTML > 1) {
     let newPrice = (price += 125);
     priceShoes.innerHTML = `$${newPrice}.00`;
@@ -110,6 +139,7 @@ minusProduct.addEventListener("click", () => {
     count -= 1;
     result.innerHTML = count;
     quantity.innerHTML = count;
+    cartCounterValue.innerHTML = count; 
     const priceDecrease = (price -= 125);
     priceShoes.innerHTML = `$${priceDecrease}.00`;
     totalPriceBasket.innerHTML = ` $${priceDecrease}.00`;
@@ -121,13 +151,16 @@ minusProduct.addEventListener("click", () => {
 
 desktopImagesThumbnail.forEach((img) => {
   img.addEventListener("click", (e) => {
+
     const clickedImg = e.target;
+    const clickedImgId = clickedImg.id;
 
     desktopImagesThumbnail.forEach((images) => {
       images.classList.remove("image_default");
     });
     clickedImg.classList.add("image_default");
 
-    desktopDefaultProductImage.src = clickedImg.src;
+    desktopDefaultProductImage.src = `images/image-product-${clickedImgId}.jpg`;
   });
 });
+

@@ -8,23 +8,8 @@ body {
   padding: 0;
   margin: 0;
 }
-.grayedOut_body {
-  background-color: rgb(15, 15, 15);
-  opacity: 70%;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  display: none;
-  position: absolute;
-  z-index: 2;
-}
-.desktopCarousel {
-  position: absolute;
-  margin: 50%;
-  width: 500px;
-  z-index: 2;
-  display: none;
-}
+
+
 .mobile_cart_container_hide {
   display: none;
 }
@@ -111,7 +96,6 @@ body {
 .checkout:hover {
   background-color: hsl(26, 92%, 43%);
 }
-
 
 .product_image {
   position: absolute;
@@ -312,7 +296,7 @@ p {
   padding-bottom: 30px;
   transition: ease-in-out 0.3s;
 }
-.product_image_default_desktop{
+.product_image_default_desktop {
   display: none;
 }
 
@@ -334,6 +318,12 @@ p {
 #collection {
   margin-top: 20px;
 }
+.desktopCarousel{
+  display: none;
+}
+.grayedOut_body{
+  display: none;
+}
 
 @media (min-width: 60em) {
   body {
@@ -345,10 +335,38 @@ p {
     display: none;
   }
   .mobile_cart_container {
+    display: block;
+    position: absolute;
+    width: 360px;
+    box-shadow: 3px 5px 17px 1px rgb(59 59 59 / 20%);
+    left: 62%;
+    top: 12%;
+    height: 300px;
+  }
+  .items_added {
+    margin-top: 10px;
+  }
+  .carosel {
     display: none;
   }
-  .carosel{
-    display: none;
+  .desktopCarousel {
+    position: absolute;
+    margin: 50%;
+    width: 500px;
+    z-index: 2;
+    display: block;
+    
+    
+  }
+  .grayedOut_body {
+    background-color: rgb(15, 15, 15);
+    opacity: 70%;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: block;
+    position: absolute;
+    z-index: 2;
   }
   .container {
     max-width: 70rem;
@@ -371,7 +389,7 @@ p {
     display: block;
     max-width: 25rem;
     width: 100%;
-  
+
     border-radius: 1.25rem;
   }
   .product_image {
@@ -385,6 +403,7 @@ p {
     grid-column: 1 / 3;
     border-bottom: 0.5px solid hsla(217, 9%, 45%, 0.315);
     padding-bottom: 1rem;
+    position: relative;
   }
   .deckstop_options {
     display: inline-block;
@@ -399,6 +418,7 @@ p {
   }
   .deckstop_options > *:hover {
     color: hsl(218, 7%, 22%);
+    cursor: pointer;
   }
 
   .deckstop_options > *::after {
@@ -419,6 +439,12 @@ p {
     width: 3rem;
     height: 3rem;
   }
+  .avatar:hover {
+    cursor: pointer;
+  }
+  .cart {
+    cursor: pointer;
+  }
   .burgerMenu {
     display: none;
   }
@@ -427,6 +453,12 @@ p {
     display: flex;
     justify-content: space-between;
     padding-right: 6.8rem;
+  }
+  .little_images1 {
+    padding-top: 31px;
+    display: flex;
+    justify-content: space-around;
+    margin-right: 15px;
   }
   .next,
   .previous {
@@ -439,7 +471,13 @@ p {
     border-radius: 10px;
     z-index: 3;
   }
-  
+  .little_images1 img {
+    max-width: 5.5rem;
+    width: 100%;
+    border-radius: 10px;
+    z-index: 3;
+  }
+
   .adding_product {
     display: flex;
     justify-content: space-evenly;
@@ -474,9 +512,27 @@ p {
   }
   .product_image_desktop {
     display: block;
-    max-width: 25rem;
+    max-width: 30rem;
     width: 100%;
-
     border-radius: 1.25rem;
+    
+  }
+  .itemsCountOnCart_hide{
+    display: none;
+  }
+  .itemsCountOnCart {
+    background-color: hsl(26, 100%, 55%);
+    position: absolute;
+    width: 20px;
+    border-radius: 10px;
+    left: 90.5%;
+    top: 21%;
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+  }
+  .itemsCountOnCart > span {
+    color: white;
+    
   }
 }
