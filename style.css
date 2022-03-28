@@ -9,7 +9,6 @@ body {
   margin: 0;
 }
 
-
 .mobile_cart_container_hide {
   display: none;
 }
@@ -272,6 +271,10 @@ p {
 .deckstop_options {
   display: none;
 }
+.avatar_border {
+  border: 3px solid hsl(26, 100%, 55%);
+  border-radius: 50%;
+}
 .little_images {
   display: none;
 }
@@ -318,10 +321,17 @@ p {
 #collection {
   margin-top: 20px;
 }
-.desktopCarousel{
+.desktopCarousel {
   display: none;
 }
-.grayedOut_body{
+.grayedOut_body {
+  display: none;
+}
+.product_image_desktop_default,
+.closeButton,
+.previousButtonDesktop,
+.nextButtonDesktop,
+.cart_counter{
   display: none;
 }
 
@@ -333,6 +343,9 @@ p {
   }
   .mobile_menu {
     display: none;
+  }
+  .cart_counter{
+    display: block;
   }
   .mobile_cart_container {
     display: block;
@@ -349,14 +362,17 @@ p {
   .carosel {
     display: none;
   }
+  .desktopCarousel_hide {
+    display: none;
+  }
   .desktopCarousel {
     position: absolute;
     margin: 50%;
     width: 500px;
     z-index: 2;
-    display: block;
-    
-    
+    display: flex;
+
+    align-items: center;
   }
   .grayedOut_body {
     background-color: rgb(15, 15, 15);
@@ -364,7 +380,7 @@ p {
     width: 100%;
     height: 100%;
     top: 0;
-    display: block;
+    display: none;
     position: absolute;
     z-index: 2;
   }
@@ -510,14 +526,21 @@ p {
     background-color: rgba(36, 36, 36, 0.425);
     opacity: 50%;
   }
-  .product_image_desktop {
+  .product_image_desktop_default {
     display: block;
+    position: absolute;
     max-width: 30rem;
     width: 100%;
     border-radius: 1.25rem;
-    
   }
-  .itemsCountOnCart_hide{
+  .product_image_desktop {
+    display: block;
+    position: absolute;
+    max-width: 30rem;
+    width: 0%;
+    border-radius: 1.25rem;
+  }
+  .itemsCountOnCart_hide {
     display: none;
   }
   .itemsCountOnCart {
@@ -533,6 +556,38 @@ p {
   }
   .itemsCountOnCart > span {
     color: white;
-    
+  }
+  .previousButtonDesktop {
+    z-index: 3;
+
+    margin-left: -4%;
+  }
+  .nextButtonDesktop {
+    z-index: 3;
+    margin-left: 89%;
+  }
+  .previousButtonDesktop,
+  .nextButtonDesktop {
+    width: 2.3rem;
+    height: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+  }
+  .closeButton {
+    position: absolute;
+    top: 0%;
+    z-index: 4;
+    margin-top: -50%;
+    margin-left: 91%;
+    background-color: white;
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
