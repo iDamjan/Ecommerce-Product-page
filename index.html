@@ -33,6 +33,31 @@
     </style>
   </head>
   <body>
+    <!-- DESKTOP CAROUSEL  -->
+    <div class="grayedOut_body"></div>
+    <div class="desktopCarousel_hide">
+      <div class="closeButton">
+        <img src="images/icon-close.svg" alt="">
+      </div>
+    
+      <img id = '0'
+            class="product_image_desktop_default lightBoxImages"
+            src="images/image-product-1.jpg"
+            alt="product1"
+          />
+          <img id = '1'class="product_image_desktop lightBoxImages" src="images/image-product-2.jpg" alt="" />
+          <img id = '2'class="product_image_desktop lightBoxImages" src="images/image-product-3.jpg" alt="" />
+          <img id = '3'class="product_image_desktop lightBoxImages" src="images/image-product-4.jpg" alt="" />
+        
+      <div class="previousButtonDesktop">
+        <img src="images/icon-previous.svg" alt="previousButtonDesktop">
+      </div>
+      <div class="nextButtonDesktop">
+        <img src="images/icon-next.svg" alt="nextButtonDesktop">
+      </div>
+      <!-- DESKTOP CAROUSEL  -->
+    </div>
+    </div>
     <div class="mobile_cart_container_hide">
       <div class="cart_headear">
         <h3>Cart</h3>
@@ -71,16 +96,21 @@
       <a href="#">About</a>
       <a href="#">Contact</a>
     </div>
+
     <section class="container">
       <div class="navbar">
         <img class="burgerMenu" src="images/icon-menu.svg" alt="burger" />
         <img class="logo" src="images/logo.svg" alt="logo" />
         <div class="deckstop_options">
+          
           <span>Collections</span>
           <span>Men</span>
           <span>Women</span>
           <span>About</span>
           <span>Contact</span>
+        </div>
+        <div class="itemsCountOnCart_hide">
+          <span class="cart_counter">1</span>
         </div>
         <img src="images/icon-cart.svg" alt="cart" class="cart" />
         <img class="avatar" src="images/image-avatar.png" alt="avatar" />
@@ -88,20 +118,19 @@
 
       <div class="product_preview">
         <div class="carosel">
-          <img
+          <!-- <img
             class="product_image_desktop"
             src="images/image-product-1.jpg"
             alt="product1"
-          />
-          <img
+          /> -->
+          <img id = "0"
             class="product_image_default"
             src="images/image-product-1.jpg"
             alt="product1"
           />
-          <img class="product_image" src="images/image-product-2.jpg" alt="" />
-          <img class="product_image" src="images/image-product-3.jpg" alt="" />
-          <img class="product_image" src="images/image-product-4.jpg" alt="" />
-          <img class="product_image" src="images/image-product-4.jpg" alt="" />
+          <img id = "1"class="product_image" src="images/image-product-2.jpg" alt="" />
+          <img id = "2"class="product_image" src="images/image-product-3.jpg" alt="" />
+          <img id = "3"class="product_image" src="images/image-product-4.jpg" alt="" />
         </div>
         <div class="previous">
           <img src="images/icon-previous.svg" alt="previous" />
@@ -109,16 +138,21 @@
         <div class="next">
           <img src="images/icon-next.svg" alt="next" />
         </div>
+        <img id = "0"
+            class="product_image_default_desktop"
+            src="images/image-product-1.jpg"
+            alt="product1"
+          />
         <div class="little_images">
-          <span
-            ><img
-              class="image_default"
+          <span 
+            ><img id="1"
+            class="image_default"
               src="images/image-product-1-thumbnail.jpg"
               alt=""
           /></span>
-          <span><img src="images/image-product-3-thumbnail.jpg" alt="" /></span>
-          <span><img src="images/image-product-4-thumbnail.jpg" alt="" /></span>
-          <span><img src="images/image-product-2-thumbnail.jpg" alt="" /></span>
+          <span ><img  id = '3' src="images/image-product-3-thumbnail.jpg" alt="" /></span>
+          <span ><img id = '4'  src="images/image-product-4-thumbnail.jpg" alt="" /></span>
+          <span ><img id = '2' src="images/image-product-2-thumbnail.jpg" alt="" /></span>
         </div>
       </div>
       <div class="pricing_pannel">
@@ -146,6 +180,8 @@
       </div>
     </section>
 
+    <script src="css-selectors.js"></script>
     <script src="app.js"></script>
+    
   </body>
 </html>
